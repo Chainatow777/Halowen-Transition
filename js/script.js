@@ -1,3 +1,5 @@
+// header
+
 const btnMobile = document.getElementById('btn-mobile')
 
 function toggleMenu(event) {
@@ -6,18 +8,54 @@ function toggleMenu(event) {
     nav.classList.toggle('active')
 }
 
+// header
+
+// menu
+
+function buttonClick() {
+    document.getElementById('sound1').play()
+
+    const splash =  document.getElementById('splash')
+    splash.style.opacity=0
+    setTimeout(() => {
+        // After the transition is ended the showSplash will be hidden
+        splash.remove();
+      }, 1000);
+}
+
+// card
+
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
 
-var button = document.getElementById('read_button')
+var buttons = document.getElementsByClassName('read_button')
 
-button.addEventListener('click', function() {
-    var card = document.querySelector('.card')
+for (var i = 0; i < buttons.length; i ++) { 
+
+buttons[i].addEventListener('click', function(evt) {
+    var card = evt.currentTarget.parentElement
     card.classList.toggle('active')
 
     if (card.classList.contains('active')) {
-        return button.textContent = 'Leia Menos'
+        return evt.currentTarget.textContent = 'Leia Menos'
     }
 
-    button.textContent = 'Leia Mais'
+    evt.currentTarget.textContent = 'Leia Mais'
 })
+
+}
+
+// buttons.forEach(button => {
+//     button.addEventListener('click', function(evt) {
+//         var card = evt.currentTarget.parentElement
+//         card.classList.toggle('active')
+    
+//         if (card.classList.contains('active')) {
+//             return evt.currentTarget.textContent = 'Leia Menos'
+//         }
+    
+//         evt.currentTarget.textContent = 'Leia Mais'
+//     }) 
+// });
+
+// card

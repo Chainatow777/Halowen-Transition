@@ -60,12 +60,12 @@ a:hover {
 @media (max-width: 600px) {
     #btn-mobile {
         display: flex;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         font-size: 1rem;
         border: none;
         background: none;
         cursor: pointer;
-        gap: .5rem;
+        gap: 0.5rem;
     }
 
     #hamburger {
@@ -130,6 +130,28 @@ a:hover {
 
 /* menu */
 
+.app-splash-screen {
+    background:#313131;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    object-fit:fill;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.app-splash-screen img {
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
 .menu {
     background-image: url(../img/castle.jpg);
     background-repeat: no-repeat;
@@ -140,11 +162,12 @@ a:hover {
 }
 
 .texto {
-    position: relative;
+    position: fixed;
     margin-left: 10rem;
 }
 
 .texto h1 {
+    width: auto;
     color: #161d2f;
     font-size: 7rem;
     font-family: 'Pirata One', cursive;
@@ -153,11 +176,6 @@ a:hover {
 .texto h1 span {
     color: #b24224;
     font-family: 'Creepster', cursive;
-}
-
-.texto h2 {
-    font-size: 2rem;
-    font-family: 'Alfa Slab One', cursive;
 }
 
 .ghost {
@@ -250,7 +268,7 @@ a:hover {
     color: #b7b7b7;
 }
 
-#read_button {
+.read_button {
     border: none;
     padding: 10px;
     border-radius: 15px;
@@ -260,7 +278,7 @@ a:hover {
     transition: all 0.2s ease-in-out;
 }
 
-#read_button:hover {
+.read_button:hover {
     background-color: transparent;
     color: #ffff;
     transition: all 0.2s ease-in-out;
