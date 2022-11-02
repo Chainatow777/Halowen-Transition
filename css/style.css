@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #313131;
+}
+
+/* header */
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header {
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3f3f3f;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+#menu a {
+    display: block;
+    padding: 0.5rem;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+
+    #hamburger {
+        color: #ffff;
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburger::after,  #hamburger::before {
+        display: block;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent ;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background-color:#3f3f3f ;
+        z-index: 1000;
+        transition: .6s;
+       height: 0px;
+       visibility: hidden;
+       overflow-y: hidden;
+    }
+
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* header */
+
+/* menu */
+
+.menu {
+    background-image: url(../img/castle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.texto {
+    position: relative;
+    margin-left: 10rem;
+}
+
+.texto h1 {
+    color: #161d2f;
+    font-size: 7rem;
+    font-family: 'Pirata One', cursive;
+}
+
+.texto h1 span {
+    color: #b24224;
+    font-family: 'Creepster', cursive;
+}
+
+.texto h2 {
+    font-size: 2rem;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.ghost {
+    display: flex;
+}
+
+.ghost img{
+    transform: scale(0.3);
+}
+
+/* menu */
+
+/* cards */
+
+.conteudo {
+    display: flex; 
+    flex-wrap: wrap; 
+    max-width: auto; 
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: 1em;
+    margin-top: 3em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 23em;
+    padding: 35px;
+    background-color: #3f3f3f;
+    text-align: justify;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389);
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 25px solid transparent;
+    border-top: 25px solid #ffff;
+    border-right: 25px solid #ffff;
+}
+
+.icon {
+    margin-bottom: 1em;
+}
+
+.icon img {
+    width: 20em;
+}
+
+.content {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #3f3f3f);
+}
+
+.content h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16pt;
+    position: relative;
+}
+
+.content h3::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 40px;
+    background-color: white;
+    bottom: 2px;
+    border-radius: 100px;
+}
+
+.content p {
+    color: #b7b7b7;
+}
+
+#read_button {
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#read_button:hover {
+    background-color: transparent;
+    color: #ffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.card.active .content {
+    height: auto;
+}
+
+.card.active .content::before {
+    visibility: hidden;
+}
+
+/* cards */
