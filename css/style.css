@@ -75,7 +75,8 @@ a:hover {
         width: 20px;
     }
 
-    #hamburger::after,  #hamburger::before {
+    #hamburger::after,
+    #hamburger::before {
         display: block;
         content: '';
         width: 20px;
@@ -87,7 +88,7 @@ a:hover {
     }
 
     #nav.active #hamburger {
-        border-top-color: transparent ;
+        border-top-color: transparent;
     }
 
     #nav.active #hamburger::before {
@@ -105,12 +106,12 @@ a:hover {
         width: 100%;
         top: 70px;
         right: 0px;
-        background-color:#3f3f3f ;
+        background-color: #3f3f3f;
         z-index: 1000;
         transition: .6s;
-       height: 0px;
-       visibility: hidden;
-       overflow-y: hidden;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
     }
 
     #nav.active #menu {
@@ -128,10 +129,10 @@ a:hover {
 
 /* header */
 
-/* menu */
+/* tela inicial */
 
 .app-splash-screen {
-    background:#313131;
+    background: #313131;
     position: fixed;
     top: 0;
     left: 0;
@@ -140,19 +141,13 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    object-fit:fill;
+    object-fit: fill;
     z-index: 10000;
     opacity: 1;
     transition: opacity 1s;
 }
 
-.app-splash-screen img {
-    max-width: 100vw;
-    min-height: 100vh;
-}
-
-.menu {
+.app-splash-screen {
     background-image: url(../img/castle.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -163,27 +158,112 @@ a:hover {
 
 .texto {
     position: fixed;
-    margin-left: 10rem;
+    height: 0;
+    text-align: center;
+    animation-name: teste;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out
+}
+
+@keyframes teste {
+    from {
+        top: 20%;
+    }
+
+    to {
+        top: 30%;
+    }
 }
 
 .texto h1 {
-    width: auto;
     color: #161d2f;
-    font-size: 7rem;
+    font-size: 5rem;
     font-family: 'Pirata One', cursive;
 }
 
 .texto h1 span {
+    text-shadow: none;
+    font-size: 7rem;
     color: #b24224;
     font-family: 'Creepster', cursive;
+    text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.5), 0 0 0.25em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(#b7b7b7), 0 0 0.5em 0 var(#b7b7b7);
+    background-color: transparent;
 }
 
-.ghost {
-    display: flex;
+.texto button {
+    letter-spacing: 0px;
+   border: solid #0c3553;
+   border-radius: 3rem;
+   height: 2.5rem;
+   width: 10rem;
+   font-family: 'Pirata One', cursive;
+   font-size: 1.5rem;
+   color: #161d2f;
+   cursor: pointer;
+   transition: .5s ease-in;
+   background-color: #a4fff8;
 }
 
-.ghost img{
-    transform: scale(0.3);
+.texto button:hover {
+    color: #7c2004;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+@media (max-width: 900px) {
+
+    .texto h1 {
+        color: #161d2f;
+        font-size: 3rem;
+        font-family: 'Pirata One', cursive;
+    }
+
+    .texto h1 span {
+        font-size: 5rem;
+        color: #b24224;
+        font-family: 'Creepster', cursive;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .texto {
+        position: fixed;
+        top: 30%;
+        right: 10%;
+        height: 0;
+        text-align: center;
+    }
+
+    .texto h1 {
+        color: #161d2f;
+        font-size: 3rem;
+        font-family: 'Pirata One', cursive;
+    }
+
+    .texto h1 span {
+        font-size: 4rem;
+        color: #b24224;
+        font-family: 'Creepster', cursive;
+    }
+
+}
+
+/* tela inicial */
+
+/* menu */
+
+.menu {
+    background-image: url(../img/castle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
 }
 
 /* menu */
@@ -191,9 +271,9 @@ a:hover {
 /* cards */
 
 .conteudo {
-    display: flex; 
-    flex-wrap: wrap; 
-    max-width: auto; 
+    display: flex;
+    flex-wrap: wrap;
+    max-width: auto;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
